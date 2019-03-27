@@ -1,7 +1,0 @@
-1. Contenu de l'index : Outre le texte de la recette, l'index doit contenir le nom du fichier
- contenant la recette ainsi que son chemin complet du fichier sur le FS.
-2. Le paramétrage d'entrée doit prévoir ( au moins ) :
-    * le nom du répertoire où sont les fichiers texte
-    * le nom du répertoire où sera créé l'index
-    * le type d'Analyseur ( au sens Lucene ) à utiliser pour faire l'indexation
-
