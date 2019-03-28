@@ -1,6 +1,6 @@
 package tests;
 
-//test eclipse/git
+//test compatibilité eclipse/git
 
 import java.io.IOException;
 import java.nio.file.Path;
