@@ -29,7 +29,7 @@ public class Sandbox {
 		IndexSearcher searcher = new IndexSearcher(reader);
 		
 		
-		Term t = new Term("contents", "chocolat");
+		Term t = new Term("contents", "vanille");
 
 		// Get the top 10 docs
 		Query query = new TermQuery(t);
