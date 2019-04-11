@@ -26,7 +26,7 @@ public class EcrireIndex {
         String docRecettes = "/Users/milena/Documents/Travail/M2TAL/java/recettes-utf-8";
          
         //répertoire qui contiendra l'index lucene
-        String indexRecettes = "/Users/milena/Documents/Travail/M2TAL/java/index-recettes";
+        String indexRecettes = "/Users/milena/Documents/Travail/M2TAL/java/INDEX";
  
         //chemin vers l'index
         final Path docChemin = Paths.get(docRecettes);
@@ -48,6 +48,8 @@ public class EcrireIndex {
         		System.out.println(fichier.toString());
         		indexDoc(writer, fichier);
         }
+        
+        writer.close();
                 
 	}
 	
@@ -62,6 +64,6 @@ public class EcrireIndex {
 		String fileContent = new String(Files.readAllBytes(f));
 		doc.add(new TextField("contents", fileContent, Store.YES));
 		
-        w.addDocument(doc);
+		w.addDocument(doc);
 	}
 }
