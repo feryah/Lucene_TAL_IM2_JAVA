@@ -1,18 +1,10 @@
-# Lucene_TAL_IM2_JAVA
-Indexation d'un corpus  de recettes de cuisine. Fournir un exemple de toutes les syntaxes de requête possibles pouvant être faites sur  l'index créé. Définition et implémentation d'un paramétrage pour la localisation de l'index.
-Questions (Ferial) :
-d'un paramétrage pour la localisation de l'index ??
+# Lucene et Java : application pratique (cours de Java, M2 TAL 2018-2019)
 
+## Contexte
+Ce projet a été réalisé dans le cadre du [master TAL à l'INALCO](http://www.tal.univ-paris3.fr/plurital/) par [Milena Chaîne](http://www.github.com/milenachaine) et [Ferial Yahiaoui](http://www.github.com/feryah).
 
-1. Pour les résultats de chaque requête, on veut le nom de la recette, le chemin du fichier la contenant, le score associé :
+Le but était d'appliquer nos connaissances en Java sur un projet pratique d'indexation et de recherche d'information avec Lucene. A partir d'un corpus de recettes de cuisine présenté sous forme de fichiers txt en UTF-8, il fallait créer un index et le paramétrer, puis fournir des exemples de toutes les syntaxes de requêtes Lucene possibles.
 
-Requêtes et score :
+## Arborescence du projet
 
-Evaluer la requête par rapport à un document ? A quel point la clause de la requête correspond-elle au document ?
-
-
-2. On veut pouvoir paramétrer le nombre de résultats affichés à la fois ?
-
-3. Quels types de requêtes doit-on appliquer ? quels types de recherches ? (mots, groupes de mots, phrases ?) Sous quelle forme doivent-elles être présentées ?
-
-
+//TODO
