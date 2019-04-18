@@ -57,7 +57,7 @@ public class EcrireIndex {
         		indexDoc(writer, fichier);
         }
         
-        System.out.println("Fermeture de l'index");
+        System.out.println("Fermeture de l'index en cours");
         writer.close();
                 
 	}
