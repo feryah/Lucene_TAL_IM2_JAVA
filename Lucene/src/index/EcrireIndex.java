@@ -1,4 +1,4 @@
-package lucene;
+package index;
 
 import java.io.IOException;
 import java.nio.file.DirectoryStream;
