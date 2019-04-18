@@ -7,4 +7,5 @@ Le but était d'appliquer nos connaissances en Java sur un projet pratique d'ind
 
 ## Arborescence du projet
 
-//TODO
+ - écriture de l'index : src/index/EcrireIndex.java
+ - test des queries : src/testqueries/TestLucene Query.java
