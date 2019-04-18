@@ -8,6 +8,7 @@ import java.nio.file.Paths;
 
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.fr.FrenchAnalyzer;
+import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.StringField;
 import org.apache.lucene.document.TextField;
@@ -23,7 +24,12 @@ import org.apache.lucene.store.FSDirectory;
 public class EcrireIndex {
 
 	public static void main(String[] args) throws IOException {
-		
+		/**
+		 * main qui permet de créer un index Lucene
+		 * premier argument : String, chemin vers les fichiers à indexer
+		 * deuxième argument : String, chemin vers l'index
+		 * @throws IOException
+		 */
         //répertoire des fichiers à indexer
         String docRecettes = args[0];
         System.out.println("Dossier à indexer : " + args[0]);
@@ -42,9 +48,9 @@ public class EcrireIndex {
         
         System.out.println("Indexation en cours");
         
-        //analyseur
-        Analyzer analyseur = new FrenchAnalyzer();
-        System.out.println("Analyseur Lucene : FrenchAnalyzer");
+        //analyseur : on a fini par utiliser StandardAnalyzer pour éviter certains problèmes avec la lemmatisation de Lucene + ici la présence de stopwords n'est pas un très gros problème
+        Analyzer analyseur = new StandardAnalyzer();
+        System.out.println("Analyseur Lucene : StandardAnalyzer");
         
         //configurer l'indexWriter qui va indexer les fichiers
         IndexWriterConfig indexConfig = new IndexWriterConfig(analyseur);
@@ -59,11 +65,18 @@ public class EcrireIndex {
         
         System.out.println("Fermeture de l'index en cours");
         writer.close();
+        System.out.println("Index fermé");
                 
 	}
 	
 	static void indexDoc(IndexWriter w, Path f) throws IOException {
 		
+		/**
+		 * indexation d'un document
+		 * IndexWriter : l'IndexWriter qui va indexer
+		 * Path : le chemin vers le répertoire contenant les fichiers à indexer
+		 * @throws IOException 
+		 */
 		//créer document Lucene
 		Document doc = new Document();
 		

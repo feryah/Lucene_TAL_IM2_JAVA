@@ -39,11 +39,12 @@ public class TestLuceneQuery {
 	/**
 	 * un test 
 	 * @throws IOException 
+	 *
 	 */
 	// afin de ne pas ouvrir l'index à chaque query, on l'ouvre une fois avant d'effectuer toutes les requêtes.
 	@Before 
 	public void OuvrePath() throws IOException {
-		path = Paths.get("/Users/ferialyahiaoui/Documents/cours/S2/JAVA/IndexRecettes");
+		path = Paths.get("/Users/milena/Documents/Travail/M2TAL/java/index-recettes");
 		index = FSDirectory.open(path);
 		reader = DirectoryReader.open(index);
 		searcher = new IndexSearcher(reader);
@@ -160,6 +161,36 @@ public class TestLuceneQuery {
 		}
 
 		System.out.println("************fin de la quatrième requête*************"+"\n"+"\n");
+}	
+	@Test
+	public void CinqTest() throws IOException {
+
+
+		//1) on effectue un test sur le champ filename
+		Term t = new Term("filename", "SAINT-HONORE-utf-8.txt"); 
+		Query query = new TermQuery(t); 
+
+		
+		
+		TopDocs tops= searcher.search(query, 10);
+		ScoreDoc[] scoreDoc = tops.scoreDocs;
+		System.out.println("************début de la cinquième requête*************"+"\n"+"\n");
+		System.out.println("Cette requête se trouve dans " +scoreDoc.length+" document(s)"+"\n"); 
+		for (ScoreDoc score : scoreDoc){
+		    System.out.println("Id DOC " + score.doc + " SCORE " + score.score+ "\n"+"\n");
+		    Document d = searcher.doc(score.doc);
+		    System.out.println("Le chemin vers le document: "+d.get("path")+"\n"+"\n");
+		    System.out.println("Le contenu du document: " + d.get("contents")+ "\n"+"\n");
+		}
+
+		// donne la fréquence du terme
+		int freq = reader.docFreq(t);
+		
+		// doit renvoyer exactement 1 fréquence (un seul document porte ce titre)
+		assertEquals(1,freq);
+		
+		System.out.println("La FREQ de la requête : " + freq+"\n"+"\n");
+		System.out.println("************fin de la cinquième requête*************"+"\n"+"\n");
 }	
 	}
 	
