@@ -1,1 +1,1 @@
-typeSearchIndex = [{"p":"lucene","l":"EcrireIndex"},{"p":"tests","l":"HelloLucene"},{"p":"tests","l":"Sandbox"},{"p":"queriestests","l":"TestLuceneQuery"},{"p":"tests","l":"WriteIndex"}]
+typeSearchIndex = [{"p":"index","l":"EcrireIndex"},{"p":"queriestests","l":"TestLuceneQuery"}]
