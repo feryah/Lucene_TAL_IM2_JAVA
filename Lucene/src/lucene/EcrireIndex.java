@@ -29,9 +29,10 @@ public class EcrireIndex {
         System.out.println("Dossier à indexer : " + args[0]);
          
         //répertoire qui contiendra l'index lucene
+
         String indexRecettes = args[1];
         System.out.println("Chemin de l'index Lucene : " + args[1]);
- 
+
         //chemin vers l'index
         final Path docChemin = Paths.get(docRecettes);
 		DirectoryStream<Path> docStream = Files.newDirectoryStream(docChemin);
@@ -55,8 +56,6 @@ public class EcrireIndex {
         		System.out.println("Fichier indexé : " + fichier.getFileName().toString());
         		indexDoc(writer, fichier);
         }
-        
-        writer.close();
                 
 	}
 	
@@ -71,6 +70,6 @@ public class EcrireIndex {
 		String fileContent = new String(Files.readAllBytes(f));
 		doc.add(new TextField("contents", fileContent, Store.YES));
 		
-		w.addDocument(doc);
+        w.addDocument(doc);
 	}
 }
