@@ -56,12 +56,15 @@ public class EcrireIndex {
         		System.out.println("Fichier indexé : " + fichier.getFileName().toString());
         		indexDoc(writer, fichier);
         }
+        
+        System.out.println("Fermeture de l'index");
+        writer.close();
                 
 	}
 	
 	static void indexDoc(IndexWriter w, Path f) throws IOException {
 		
-		//créer doc Lucene
+		//créer document Lucene
 		Document doc = new Document();
 		
 		//ajouter champs
