@@ -8,6 +8,7 @@ import java.nio.file.Paths;
 
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.fr.FrenchAnalyzer;
+import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.StringField;
 import org.apache.lucene.document.TextField;
@@ -26,7 +27,7 @@ public class EcrireIndex {
         String docRecettes = "/Users/milena/Documents/Travail/M2TAL/java/recettes-utf-8";
          
         //répertoire qui contiendra l'index lucene
-        String indexRecettes = "/Users/milena/Documents/Travail/M2TAL/java/INDEX";
+        String indexRecettes = "/Users/milena/Documents/Travail/M2TAL/java/index-recettes";
  
         //chemin vers l'index
         final Path docChemin = Paths.get(docRecettes);
